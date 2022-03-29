@@ -1,1 +1,1 @@
-Larax - powerade by Laravel
+Larax - powered by Laravel
