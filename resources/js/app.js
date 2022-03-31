@@ -8,8 +8,6 @@ Alpine.start();
 
 var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
 var themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
-
-// Change the icons inside the button based on previous settings
 if (
     localStorage.getItem("color-theme") === "dark" ||
     (!("color-theme" in localStorage) &&
@@ -19,6 +17,9 @@ if (
 } else {
     themeToggleDarkIcon.classList.remove("hidden");
 }
+console.log(localStorage.getItem("color-theme"));
+
+// Change the icons inside the button based on previous settings
 
 var themeToggleBtn = document.getElementById("theme-toggle");
 
@@ -47,4 +48,6 @@ themeToggleBtn.addEventListener("click", function () {
             localStorage.setItem("color-theme", "dark");
         }
     }
+    themeToggleBtn.addEventListener();
+    console.log(localStorage.getItem("color-theme"));
 });

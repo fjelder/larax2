@@ -19,7 +19,7 @@ module.exports = {
                 spacing: "margin, padding",
             },
             colors: {
-                primary: colors.indigo,
+                primary: colors.blue,
                 secondary: colors.slate,
                 extra: colors.gray,
             },
