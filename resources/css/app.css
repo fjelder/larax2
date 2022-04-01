@@ -38,7 +38,7 @@ nav.main-menu a {
     @apply relative inline-flex items-center px-2 text-xs md:text-sm;
 }
 nav.main-menu a.active {
-    @apply border-l border-r shadow-lg bg-secondary-300/5 border-secondary-300/60;
+    @apply border-l border-r shadow-lg bg-secondary-300/5 border-secondary-300/60 dark:border-secondary-300/10;
 }
 nav.main-menu a.active svg {
     @apply text-primary-300;
