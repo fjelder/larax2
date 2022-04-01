@@ -23,6 +23,9 @@ module.exports = {
                 secondary: colors.slate,
                 extra: colors.gray,
             },
+            fontSize: {
+                xxs: ["8px", "10px"],
+            },
         },
     },
 

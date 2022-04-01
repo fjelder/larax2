@@ -5,8 +5,10 @@
 * {
     @apply dark:border-secondary-300/10 border-secondary-200 focus:border-secondary-200;
 }
-input {
-    @apply bg-secondary-50 border text-secondary-900 text-sm rounded-lg focus:ring-0 focus:outline-none focus:border-secondary-300 block p-2.5 dark:bg-secondary-700  dark:placeholder-secondary-400 dark:text-white dark:focus:border-secondary-300/30;
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    @apply bg-secondary-50 border border-secondary-600/10 text-secondary-900 text-sm rounded-lg focus:ring-0 focus:outline-none focus:border-secondary-300 block p-2.5 dark:bg-secondary-700  dark:placeholder-secondary-400 dark:text-white dark:focus:border-secondary-300/30;
 }
 body > svg {
     @apply fixed hidden w-24 text-blue-800 transform opacity-25 fill-current 2xl:block dark:text-secondary-300 -z-10;
@@ -20,7 +22,7 @@ header {
 }
 header .logo {
     font-family: "Righteous", cursive;
-    @apply inline-flex items-center antialiased font-semibold text-secondary-300 dark:text-secondary-500;
+    @apply inline-flex items-center antialiased font-semibold text-secondary-600 dark:text-secondary-500;
 }
 header .btn {
     @apply rounded-full cursor-pointer text-secondary-500 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-secondary-200 dark:focus:ring-secondary-700 text-sm p-2.5;

@@ -1,0 +1,58 @@
+{
+	"company" : [
+		{
+			"name" : "E=R=G Polska sp. z o. o. sp. komandytowa",
+			"shortName" : "ERG",
+			"street" : "ul. Pietrusińskiego 4",
+			"city" : "Poznań",
+			"postCode" : "61-418",
+			"voivodeship" : "15",
+			"country" : "pl",
+			"email" : "biuro@ergpolska.pl",
+			"phone1" : "",
+			"phone2" : "",
+			"landPhone" : "61 833 10 59",
+			"fax" : "61 633 12 59",
+			"nip" : "783-168-23-42",
+			"regon" : "301940641",
+			"krs" : "0000398676",
+			"description" : "Biuro projektowe"
+		},
+		{
+			"name" : "Zakład Robót Komunikacyjnych - DOM w Poznaniu Sp. z o. o.",
+			"shortName" : "ZRK",
+			"street" : "ul. Kolejowa 4",
+			"city" : "Poznań",
+			"postCode" : "60-715",
+			"voivodeship" : "15",
+			"country" : "pl",
+			"email" : "sekretariat@zrk-dom.com.pl",
+			"phone1" : "",
+			"phone2" : "",
+			"landPhone" : "61 633 36 59",
+			"fax" : "",
+			"nip" : "779-215-77-60",
+			"regon" : "634195317",
+			"krs" : "0000027669",
+			"description" : ""
+		},
+		{
+			"name" : "Zakład Produkcyjno-Handlowo-Usługowy ATE Sp. z o.o.",
+			"shortName" : "ATE",
+			"street" : "Plac Dworcowy 4",
+			"city" : "Zbąszyń",
+			"postCode" : "64-360",
+			"voivodeship" : "15",
+			"country" : "pl",
+			"email" : "biuro@ate-zbaszyn.eu",
+			"phone1" : "",
+			"phone2" : "",
+			"landPhone" : "68 384 69 21",
+			"fax" : "68 384 62 20",
+			"nip" : "923-134-09-30",
+			"regon" : "970606817",
+			"krs": "",
+			"description" : ""
+		}
+	]
+}
