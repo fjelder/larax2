@@ -29,17 +29,29 @@ header .btn {
 }
 /*** header - 2 level ; navigation ***/
 nav.main-menu {
-    @apply flex flex-col items-center justify-between mx-auto my-5 space-y-5 md:my-0 md:space-y-0 md:flex-row md:h-16 max-w-7xl;
+    @apply flex flex-col items-center justify-between py-5 mx-auto space-y-5 md:py-0 md:space-y-0 md:flex-row md:h-16 max-w-7xl;
 }
 nav.main-menu input[type="text"] {
     @apply w-56 pl-4 my-auto text-sm duration-200 border rounded-none shadow-md focus:border-primary-200 dark:focus:border-secondary-300/10 dark:bg-secondary-800 focus:w-full md:focus:w-96 transition-width focus:rounded-sm border-primary-500/20;
 }
 nav.main-menu a {
-    @apply relative inline-flex items-center text-xs md:text-sm;
+    @apply relative inline-flex items-center px-2 text-xs md:text-sm;
+}
+nav.main-menu a.active {
+    @apply border-l border-r shadow-lg bg-secondary-300/5 border-secondary-300/60;
+}
+nav.main-menu a.active svg {
+    @apply text-primary-300;
+}
+nav.main-menu a:hover svg {
+    @apply transition-all duration-500 -rotate-180;
+}
+nav.main-menu a.active:first-child {
+    @apply border-l-0;
 }
 nav.main-menu a.active:after,
 nav.main-menu a:hover:after {
-    @apply block border-b-2 border-primary-500 absolute -inset-0.5;
+    @apply absolute inset-x-0 top-0 block border-b-2 border-primary-500 -bottom-0.5;
     content: "";
 }
 nav.main-menu a:hover:not(a.active) {

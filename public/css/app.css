@@ -939,8 +939,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 0.25rem;
 }.gap-2{
   gap: 0.5rem;
-}.gap-5{
-  gap: 1.25rem;
 }.space-x-8 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
   margin-right: calc(2rem * var(--tw-space-x-reverse));
@@ -1179,6 +1177,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.25rem;
 }.pt-8{
   padding-top: 2rem;
+}.pl-0{
+  padding-left: 0px;
 }.pb-12{
   padding-bottom: 3rem;
 }.text-left{
@@ -1234,8 +1234,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.25;
 }.leading-4{
   line-height: 1rem;
-}.leading-3{
-  line-height: .75rem;
 }.tracking-widest{
   letter-spacing: 0.1em;
 }.tracking-wider{
@@ -1504,8 +1502,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }/*** header - 2 level ; navigation ***/nav.main-menu{
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
   display: flex;
   max-width: 80rem;
   flex-direction: column;
@@ -1515,10 +1511,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-space-y-reverse: 0;
   margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}nav.main-menu{
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }@media (min-width: 768px){nav.main-menu{
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }nav.main-menu{
     height: 4rem;
   }nav.main-menu{
     flex-direction: row;
@@ -1526,6 +1522,9 @@ Ensure the default browser behavior of the `hidden` attribute.
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }nav.main-menu{
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 }nav.main-menu input[type="text"]{
   margin-top: auto;
@@ -1560,18 +1559,39 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
   display: inline-flex;
   align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   font-size: 0.75rem;
   line-height: 1rem;
 }@media (min-width: 768px){nav.main-menu a{
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
+}nav.main-menu a.active{
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-color: rgb(203 213 225 / 0.6);
+  background-color: rgb(203 213 225 / 0.05);
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}nav.main-menu a.active svg{
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
+}nav.main-menu a:hover svg{
+  --tw-rotate: -180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}nav.main-menu a.active:first-child{
+  border-left-width: 0px;
 }nav.main-menu a.active:after, nav.main-menu a:hover:after{
   position: absolute;
-  top: -0.125rem;
-  right: -0.125rem;
+  left: 0px;
+  right: 0px;
+  top: 0px;
   bottom: -0.125rem;
-  left: -0.125rem;
   display: block;
   border-bottom-width: 2px;
   --tw-border-opacity: 1;
@@ -1975,6 +1995,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     border-left-width: 1px;
   }.md\:border-r{
     border-right-width: 1px;
+  }.md\:pr-4{
+    padding-right: 1rem;
+  }.md\:pl-0{
+    padding-left: 0px;
   }
 }@media (min-width: 1024px){.lg\:col-span-4{
     grid-column: span 4 / span 4;

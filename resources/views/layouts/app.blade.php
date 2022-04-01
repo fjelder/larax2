@@ -35,26 +35,26 @@
   <x-svg-background />
   <x-jet-banner />
 
-  <div class="min-h-screen mx-auto bg-white border-l border-r max-w-7xl dark:bg-secondary-900/50 flex flex-col">
+  <div class="flex flex-col min-h-screen mx-auto bg-white border-l border-r max-w-7xl dark:bg-secondary-900/50">
     <!-- top -->
 
     <div class="bg-secondary-50/50 dark:bg-secondary-900/40 border-primary-500/20">
       @livewire('navigation-menu')
-      <nav class="main-menu px-4 border-b-2">
-        <div class="flex flex-wrap w-full h-full gap-5 font-medium text-secondary-500">
-          <a href="" class="active">
+      <nav class="pl-0.5a md:pr-4 md:pl-0 border-b-2 main-menu">
+        <div class="flex flex-wrap w-full h-full font-medium gap-5x text-secondary-500">
+          <a href="{{ route('dashboard') }}" class="{{request()->routeIs('dashboard') ? 'active' : ''}}">
             <x-heroicon-o-home />
             Strona główna
           </a>
 
-          <a href="" class="">
+          <a href="{{ route('contract.index') }}" class="{{request()->routeIs('contract.index') ? 'active' : ''}}">
             <x-heroicon-o-collection />
             Kontrakty
           </a>
 
-          <a href="" class="">
-            <x-heroicon-o-database />
-            Link 3
+          <a href="{{route('profile.show')}}" class="{{request()->routeIs('profile.show') ? 'active' : ''}}">
+            <x-heroicon-o-user />
+            Profil
           </a>
 
         </div>
@@ -71,7 +71,7 @@
 
         <x-aside />
 
-        <x-table-contract />
+        <x-contract-table />
 
       </div>
       @endif
@@ -79,13 +79,13 @@
     </main>
   </div>
 
-  <div class="min-h-screen bg-gray-100 hidden">
+  <div class="hidden min-h-screen bg-gray-100">
     @livewire('navigation-menu')
 
     <!-- Page Heading -->
     @if (isset($header))
     <header class="bg-white shadow">
-      <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {{ $header }}
       </div>
     </header>

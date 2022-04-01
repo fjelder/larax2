@@ -26,6 +26,9 @@ module.exports = {
             fontSize: {
                 xxs: ["8px", "10px"],
             },
+            rotate: {
+                360: "360deg",
+            },
         },
     },
 
