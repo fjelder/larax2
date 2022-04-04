@@ -97,8 +97,12 @@
           @endswitch
 
         </td>
-        <td class="px-6 py-4 text-right">
-          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+        <td class="">
+          <a href="{{route('contract.show', $contract->id)}}" class="text-primary-400 hover:text-primary-600 ">
+            <x-heroicon-o-chevron-double-down
+              class="w-5 h-5 inline-block hover:-rotate-90 transition-all duration-300" />
+          </a>
+
         </td>
       </tr>
       @endforeach

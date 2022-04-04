@@ -1,4 +1,4 @@
-<nav id="breadcrumbs" class="flex justify-end my-6 px-8" aria-label="Breadcrumb">
+<nav id="breadcrumbs" class="justify-self-end flex justify-end" aria-label="Breadcrumb">
   <ol class="inline-flex flex-wrap items-center space-x-1 md:space-x-3">
     <li class="inline-flex items-center">
       <a href="#"

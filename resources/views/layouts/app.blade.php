@@ -64,7 +64,13 @@
 
     <main class="flex flex-col flex-1 px-4 pb-12">
 
-      <x-breadcrumbs />
+      <div class="flex md:flex-row flex-col items-start md:justify-between md:items-center my-6 gap-4">
+        <!-- Page Heading -->
+        @if (isset($header))
+        {{ $header }}
+        @endif
+        <x-breadcrumbs />
+      </div>
       {{$slot}}
       @isset($aside)
       <div class="flex flex-col flex-1 md:flex-row">
@@ -79,23 +85,6 @@
     </main>
   </div>
 
-  <div class="hidden min-h-screen bg-gray-100">
-    @livewire('navigation-menu')
-
-    <!-- Page Heading -->
-    @if (isset($header))
-    <header class="bg-white shadow">
-      <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        {{ $header }}
-      </div>
-    </header>
-    @endif
-
-    <!-- Page Content -->
-    <main>
-      {{ $slot }}
-    </main>
-  </div>
 
   @stack('modals')
 

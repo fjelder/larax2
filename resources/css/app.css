@@ -8,7 +8,7 @@
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    @apply bg-secondary-50 border border-secondary-600/10 text-secondary-900 text-sm rounded-lg focus:ring-0 focus:outline-none focus:border-secondary-300 block p-2.5 dark:bg-secondary-700  dark:placeholder-secondary-400 dark:text-white dark:focus:border-secondary-300/30;
+    @apply bg-secondary-50 border border-secondary-600/10 text-secondary-900 text-sm rounded-sm focus:ring-0 focus:outline-none focus:border-secondary-300 block p-2.5 dark:bg-secondary-700  dark:placeholder-secondary-400 dark:text-white dark:focus:border-primary-500/50;
 }
 body > svg {
     @apply fixed hidden w-24 text-blue-800 transform opacity-25 fill-current 2xl:block dark:text-secondary-300 -z-10;
@@ -38,13 +38,13 @@ nav.main-menu a {
     @apply relative inline-flex items-center px-2 text-xs md:text-sm;
 }
 nav.main-menu a.active {
-    @apply border-l border-r shadow-lg bg-secondary-300/5 border-secondary-300/60 dark:border-secondary-300/10;
+    @apply border-l border-r shadow-none bg-primary-50/50 border-secondary-300/60 dark:border-secondary-300/10;
 }
 nav.main-menu a.active svg {
     @apply text-primary-300;
 }
 nav.main-menu a:hover svg {
-    @apply transition-all duration-500 -rotate-180;
+    @apply transition-all duration-100 scale-110 text-secondary-500/30 dark:text-secondary-200/30;
 }
 nav.main-menu a.active:first-child {
     @apply border-l-0;
