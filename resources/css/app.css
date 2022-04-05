@@ -20,7 +20,8 @@ body > svg.svg-primary {
 header {
     @apply bg-secondary-50/50 dark:bg-secondary-900/40;
 }
-header .logo {
+header .logo,
+.logo-quest {
     font-family: "Righteous", cursive;
     @apply inline-flex items-center antialiased font-semibold text-secondary-600 dark:text-secondary-500;
 }
@@ -38,7 +39,7 @@ nav.main-menu a {
     @apply relative inline-flex items-center px-2 text-xs md:text-sm;
 }
 nav.main-menu a.active {
-    @apply border-l border-r shadow-none bg-primary-50/50 border-secondary-300/60 dark:border-secondary-300/10;
+    @apply border-l border-r shadow-none bg-primary-50/50 dark:bg-primary-800/10 border-secondary-300/60 dark:border-secondary-300/10;
 }
 nav.main-menu a.active svg {
     @apply text-primary-300;

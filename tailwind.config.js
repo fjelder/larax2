@@ -19,9 +19,9 @@ module.exports = {
                 spacing: "margin, padding",
             },
             colors: {
-                primary: colors.blue,
+                primary: colors.sky,
                 secondary: colors.slate,
-                extra: colors.gray,
+                extra: colors.red,
             },
             fontSize: {
                 xxs: ["8px", "10px"],

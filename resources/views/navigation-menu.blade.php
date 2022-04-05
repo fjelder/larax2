@@ -2,7 +2,7 @@
   <div class="px-4 border-b border-primary-500/20">
     <div class="flex flex-row items-center justify-between h-16 mx-auto max-w-7xl">
       <a href="/" class="logo">
-        <x-logo />
+        <x-logo class="h-9 w-9" />
         <p class="ml-2 text-3xl">
           <span class="text-4xl font-semibold">L</span>ara<span
             class="font-semibold text-primary-600/70 dark:text-primary-500/70">x2</span><span

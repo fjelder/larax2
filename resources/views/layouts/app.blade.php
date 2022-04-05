@@ -64,23 +64,21 @@
 
     <main class="flex flex-col flex-1 px-4 pb-12">
 
-      <div class="flex md:flex-row flex-col items-start md:justify-between md:items-center my-6 gap-4">
+      <div
+        class="flex flex-col items-start gap-4 my-6 md:flex-row md:items-center {{ isset($header) ? 'md:justify-between' : 'md:justify-end'}}">
         <!-- Page Heading -->
         @if (isset($header))
         {{ $header }}
         @endif
         <x-breadcrumbs />
       </div>
-      {{$slot}}
-      @isset($aside)
+
       <div class="flex flex-col flex-1 md:flex-row">
-
-        <x-aside />
-
-        <x-contract-table />
-
+        @isset($aside)
+        {{$aside}}
+        @endif
+        {{$slot}}
       </div>
-      @endif
 
     </main>
   </div>

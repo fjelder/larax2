@@ -19,10 +19,18 @@
 </head>
 
 <body>
-  {{now()}}
-  <div class="font-sans text-gray-900 antialiased">
-    {{ $slot }}
+  <div class="font-sans text-gray-900 antialiased relative min-h-screen flex">
+    @php
+    $path = 'img/login_background'.rand(1,2).'.jpg'
+    @endphp
+    <div class="hidden md:block bg-cover bg-center min-h-full min-w-full"
+      style="background-image: url({{Storage::url($path)}})">
+    </div>
+    <div class="md:w-1/2 w-full md:absolute md:right-0 border-l-4 border-primary-700/90">
+      {{ $slot }}
+    </div>
   </div>
+
 </body>
 
 </html>
