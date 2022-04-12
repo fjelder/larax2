@@ -1,4 +1,7 @@
 <x-app-layout>
+  <x-slot name="header">
+    Nowy kontrakt
+  </x-slot>
   <x-slot name="aside">
     <x-contract.aside />
   </x-slot>

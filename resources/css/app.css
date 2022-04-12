@@ -8,7 +8,7 @@
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    @apply bg-secondary-50 border border-secondary-600/10 text-secondary-900 text-sm rounded-sm focus:ring-0 focus:outline-none focus:border-secondary-300 block p-2.5 dark:bg-secondary-700  dark:placeholder-secondary-400 dark:text-white dark:focus:border-primary-500/50;
+    @apply bg-secondary-50 border border-secondary-600/10 text-secondary-900 text-sm rounded-sm focus:ring-0 focus:outline-none focus:border-secondary-300 p-2.5 dark:bg-secondary-700  dark:placeholder-secondary-400 dark:text-white dark:focus:border-primary-500/50;
 }
 body > svg {
     @apply fixed hidden w-24 text-blue-800 transform opacity-25 fill-current 2xl:block dark:text-secondary-300 -z-10;
@@ -32,14 +32,17 @@ header .btn {
 nav.main-menu {
     @apply flex flex-col items-center justify-between py-5 mx-auto space-y-5 md:py-0 md:space-y-0 md:flex-row md:h-16 max-w-7xl;
 }
-nav.main-menu input[type="text"] {
+nav.main-menu input[type="text2"] {
     @apply w-56 pl-4 my-auto text-sm duration-200 border rounded-none shadow-md focus:border-primary-200 dark:focus:border-secondary-300/10 dark:bg-secondary-800 focus:w-full md:focus:w-96 transition-width focus:rounded-sm border-primary-500/20;
+}
+nav.main-menu input[type="text"] {
+    @apply block py-2.5 px-0 w-full text-sm text-secondary-900 bg-transparent border-0 focus:border-b-2 border-secondary-300 appearance-none dark:text-white dark:border-secondary-600 dark:focus:border-primary-700 focus:outline-none focus:ring-0 focus:border-primary-600 cursor-pointer;
 }
 nav.main-menu a {
     @apply relative inline-flex items-center px-2 text-xs md:text-sm;
 }
 nav.main-menu a.active {
-    @apply border-l border-r shadow-none bg-primary-50/50 dark:bg-primary-800/10 border-secondary-300/60 dark:border-secondary-300/10;
+    @apply border-l border-r shadow-none bg-primary-50/10 dark:bg-primary-800/10 border-secondary-300/60 dark:border-secondary-300/10;
 }
 nav.main-menu a.active svg {
     @apply text-primary-300;
@@ -56,7 +59,7 @@ nav.main-menu a:hover:after {
     content: "";
 }
 nav.main-menu a:hover:not(a.active) {
-    @apply text-secondary-700 dark:text-secondary-400;
+    @apply text-secondary-400 dark:text-secondary-400;
 }
 nav.main-menu a > svg {
     @apply w-6 h-6 mr-3;
@@ -75,4 +78,11 @@ main aside a.active {
 /*** wrapper - main ***/
 main input[type="text"].table-text-input {
     @apply pl-10 w-80;
+}
+
+.tabs ul li a {
+    @apply inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-secondary-600 hover:border-secondary-300 dark:hover:text-secondary-300;
+}
+.tabs ul li a.active {
+    @apply inline-block p-4 border-b-2 rounded-t-lg text-primary-600 border-primary-600 dark:text-primary-500 dark:border-primary-500;
 }

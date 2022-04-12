@@ -6,6 +6,7 @@ module.exports = {
         "./vendor/laravel/jetstream/**/*.blade.php",
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
+        "./node_modules/flowbite/**/*.js",
     ],
     darkMode: "class",
     theme: {
@@ -21,7 +22,7 @@ module.exports = {
             colors: {
                 primary: colors.sky,
                 secondary: colors.slate,
-                extra: colors.red,
+                extra: colors.teal,
             },
             fontSize: {
                 xxs: ["8px", "10px"],
@@ -35,5 +36,6 @@ module.exports = {
     plugins: [
         require("@tailwindcss/forms"),
         require("@tailwindcss/typography"),
+        require("flowbite/plugin"),
     ],
 };

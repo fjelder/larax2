@@ -21,7 +21,7 @@
 <body>
   <div class="font-sans text-gray-900 antialiased relative min-h-screen flex">
     @php
-    $path = 'img/login_background'.rand(1,2).'.jpg'
+    $path = 'img/login_background'.rand(1,4).'.jpg'
     @endphp
     <div class="hidden md:block bg-cover bg-center min-h-full min-w-full"
       style="background-image: url({{Storage::url($path)}})">

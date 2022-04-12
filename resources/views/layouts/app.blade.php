@@ -58,7 +58,22 @@
           </a>
 
         </div>
-        <input type="text" id="site-search" name="search" class="" placeholder="Wyszukaj...[/] [esc]">
+
+        <div class="relative z-0 w-96">
+          <input type="text" id="site-search" name="search" class="peer" placeholder=" " />
+          <label for="search"
+            class="absolute text-sm text-secondary-500 dark:text-secondary-400 duration-300 transform -translate-y-4 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">
+            <x-heroicon-o-search class="w-5 h-5 inline-block" />
+            Wyszukaj
+          </label>
+          <label for="search"
+            class="absolute text-sm text-secondary-500 dark:text-secondary-400 duration-300 transform -translate-y-4 scale-75 top-2 right-0 -z-10 origin-[0] peer-focus:hidden peer-focus:text-primary-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 ">[/]</label>
+          <label for="search"
+            class="absolute text-sm text-secondary-500 dark:text-secondary-400 duration-300 transform -translate-y-4 scale-75 top-2 hidden -z-10 origin-[0] peer-focus:inline peer-focus:right-0 peer-focus:text-primary-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 ">[esc]</label>
+
+        </div>
+
+
       </nav>
     </div>
 
@@ -68,12 +83,15 @@
         class="flex flex-col items-start gap-4 my-6 md:flex-row md:items-center {{ isset($header) ? 'md:justify-between' : 'md:justify-end'}}">
         <!-- Page Heading -->
         @if (isset($header))
-        {{ $header }}
+        <h2 class="text-xl font-semibold leading-tight capitalize text-secondary-600 dark:text-secondary-500">
+          <span class="text-2xl text-extra-500 hidden">:..</span>
+          {{ $header }}
+        </h2>
         @endif
         <x-breadcrumbs />
       </div>
 
-      <div class="flex flex-col flex-1 md:flex-row">
+      <div class="{{isset($aside) ? 'flex flex-col flex-1 md:flex-row' : ''}}">
         @isset($aside)
         {{$aside}}
         @endif

@@ -6,6 +6,9 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
+import "flowbite";
+
+// toogle theme
 var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
 var themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
 if (
@@ -51,3 +54,21 @@ themeToggleBtn.addEventListener("click", function () {
     themeToggleBtn.addEventListener();
     console.log(localStorage.getItem("color-theme"));
 });
+// search input shortcuts
+document.onkeydown = checkShortcuts;
+function checkShortcuts(event) {
+    if (event.keyCode == 191) {
+        // 191 == "/" key
+        var text_input = document.getElementById("site-search");
+        text_input.focus();
+        text_input.select();
+        return false;
+    }
+    if (event.keyCode == 27) {
+        // 27 == "esc" key
+        var text_input = document.getElementById("site-search");
+        text_input.value = "";
+        text_input.blur();
+        return false;
+    }
+}
