@@ -56,7 +56,7 @@
       <div class="flex h-16 w-full items-center ">
         <img class="mx-auto h-6 w-6 hidden"
           src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/leaves.png" />
-        <x-logo class="mx-auto h-10 w-10" />
+        <x-logo class="mx-auto h-12 w-12" />
       </div>
 
       <ul class="">

@@ -1,6 +1,6 @@
 <div class="flex flex-1 flex-col">
   <!-- section body top nav -->
-  <nav aria-label="top bar" class="flex h-16 flex-none justify-between bg-white">
+  <nav aria-label="top bar" class="flex h-16 flex-none justify-between bg-white items-center">
     <!-- top bar left -->
     <ul aria-label="top bar left" aria-orientation="horizontal" class="flex">
       <!-- add button -->
@@ -19,26 +19,28 @@
           <ul id="add" role="listbox"
             class="w-dropdown-large w-screen max-w-md rounded-md border bg-white py-2 leading-relaxed shadow-lg outline-none focus:outline-none">
             <li role="separator" class="mb-2">
-              <label class="block px-4 py-3 font-semibold"> New </label>
+              <label class="block px-4 py-3 font-semibold"> Nowy </label>
               <hr />
             </li>
             <li role="option"
-              class="my-1 cursor-pointer px-6 py-1 hover:bg-blue-100 focus:bg-blue-100 focus:outline-none">Ticket
+              class="my-1 cursor-pointer px-6 py-1 hover:bg-primary-100 focus:bg-primary-100 focus:outline-none">
+              Korespondencja
             </li>
             <li role="option"
-              class="my-1 cursor-pointer px-6 py-1 hover:bg-blue-100 focus:bg-blue-100 focus:outline-none">User</li>
+              class="my-1 cursor-pointer px-6 py-1 hover:bg-primary-100 focus:bg-primary-100 focus:outline-none">Projekt
+            </li>
             <li role="option"
-              class="my-1 cursor-pointer px-6 py-1 hover:bg-blue-100 focus:bg-blue-100 focus:outline-none">
+              class="my-1 cursor-pointer px-6 py-1 hover:bg-primary-100 focus:bg-primary-100 focus:outline-none">
               Organization</li>
             <li role="option"
-              class="my-1 cursor-pointer px-6 py-1 hover:bg-blue-100 focus:bg-blue-100 focus:outline-none">Search
+              class="my-1 cursor-pointer px-6 py-1 hover:bg-primary-100 focus:bg-primary-100 focus:outline-none">Search
             </li>
             <li role="separator" class="mb-2">
-              <label class="block px-4 py-3 font-semibold">Recently Viewed</label>
+              <label class="block px-4 py-3 font-semibold">Ostatnio oglądane</label>
               <hr />
             </li>
             <li role="option"
-              class="my-1 cursor-pointer px-6 py-1 hover:bg-blue-100 focus:bg-blue-100 focus:outline-none">
+              class="my-1 cursor-pointer px-6 py-1 hover:bg-primary-100 focus:bg-primary-100 focus:outline-none">
               <div class="flex">
                 <div class="pr-2">
                   <span style="padding: 2px 5px; font-size: 0.7rem;"
@@ -55,7 +57,7 @@
               </div>
             </li>
             <li role="option"
-              class="my-1 cursor-pointer px-6 py-1 hover:bg-blue-100 focus:bg-blue-100 focus:outline-none">
+              class="my-1 cursor-pointer px-6 py-1 hover:bg-primary-100 focus:bg-primary-100 focus:outline-none">
               <div class="flex">
                 <div class="pr-2">
                   <span style="padding: 2px 5px; font-size: 0.7rem;"
@@ -72,7 +74,7 @@
               </div>
             </li>
             <li role="option"
-              class="my-1 cursor-pointer px-6 py-1 hover:bg-blue-100 focus:bg-blue-100 focus:outline-none">
+              class="my-1 cursor-pointer px-6 py-1 hover:bg-primary-100 focus:bg-primary-100 focus:outline-none">
               <div class="flex">
                 <div class="pr-2">
                   <span style="padding: 2px 5px; font-size: 0.7rem;"
@@ -89,11 +91,11 @@
               </div>
             </li>
             <li role="option"
-              class="my-1 cursor-pointer px-6 py-1 hover:bg-blue-100 focus:bg-blue-100 focus:outline-none">
+              class="my-1 cursor-pointer px-6 py-1 hover:bg-primary-100 focus:bg-primary-100 focus:outline-none">
               <div class="flex">
                 <div class="pr-2">
                   <span style="padding: 2px 5px; font-size: 0.7rem;"
-                    class="rounded-sm bg-blue-600 font-mono leading-none text-white">P</span>
+                    class="rounded-sm bg-primary-600 font-mono leading-none text-white">P</span>
                 </div>
                 <div class="flex-1">
                   <p>Vertias - ams opps issue</p>
@@ -107,7 +109,7 @@
             </li>
 
             <li role="option"
-              class="my-1 cursor-pointer px-6 py-1 hover:bg-blue-100 focus:bg-blue-100 focus:outline-none">
+              class="my-1 cursor-pointer px-6 py-1 hover:bg-primary-100 focus:bg-primary-100 focus:outline-none">
               <div class="flex">
                 <div class="pr-2">
                   <span style="padding: 2px 5px; font-size: 0.7rem;"
@@ -128,6 +130,13 @@
       </li>
     </ul>
 
+    <a href="/" class="logo-quest">
+      <p class="ml-2 text-3xl">
+        <span class="text-4xl font-semibold">L</span>ara<span
+          class="font-semibold text-extra-600/70 dark:text-primary-500/70">x2</span><span
+          class="font-semibold text-extra-600 dark:text-primary-500">.</span>
+      </p>
+    </a>
     <!-- to bar right  -->
     <ul aria-label="top bar right" aria-orientation="horizontal" class="flex items-center px-8">
       <li class="relative">
@@ -185,7 +194,7 @@
         <button title="Page Menu" aria-label="page menu"
           class="focus:shadow-outline h-full w-full rounded-full border focus:outline-none">
           <img class="mx-auto h-full w-full rounded-full"
-            src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/me.jpg" />
+            src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/me.jpg" />
         </button>
       </li>
     </ul>
@@ -200,14 +209,14 @@
   <main class="flex min-h-0 flex-grow border-t">
     <!-- section update to tickets -->
     <section class="flex min-h-0 w-full max-w-sm flex-none flex-col overflow-auto bg-gray-100 p-4">
-      <h1 class="mb-3 font-semibold">List of contracts</h1>
+      <h1 class="mb-3 font-semibold">Lista kontraktów</h1>
       <ul>
         <li>
           <article tabindex="0"
             class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
+                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
             </span>
             <div class="flex-1">
               <header class="mb-1 font-semibold">
@@ -224,7 +233,7 @@
             class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
+                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
             </span>
             <div class="flex-1">
               <header class="mb-1">
@@ -242,7 +251,7 @@
             class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
+                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
             </span>
             <div class="flex-1">
               <header class="mb-1">
@@ -260,7 +269,7 @@
             class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
+                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
             </span>
             <div class="flex-1">
               <header class="mb-1">
@@ -278,7 +287,7 @@
             class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
+                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
             </span>
             <div class="flex-1">
               <header class="mb-1">
@@ -296,7 +305,7 @@
             class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
+                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
             </span>
             <div class="flex-1">
               <header class="mb-1">
@@ -314,7 +323,7 @@
             class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
+                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
             </span>
             <div class="flex-1">
               <header class="mb-1">
@@ -332,7 +341,7 @@
             class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
+                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
             </span>
             <div class="flex-1">
               <header class="mb-1">
@@ -350,7 +359,7 @@
             class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
+                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
             </span>
             <div class="flex-1">
               <header class="mb-1">
@@ -368,7 +377,7 @@
             class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
+                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
             </span>
             <div class="flex-1">
               <header class="mb-1">
@@ -386,7 +395,7 @@
             class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
+                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
             </span>
             <div class="flex-1">
               <header class="mb-1">
@@ -404,7 +413,7 @@
             class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
+                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
             </span>
             <div class="flex-1">
               <header class="mb-1">
@@ -483,7 +492,7 @@
           <h2 id="content-caption" class="font-semibold">Tickets requiring your attention (6)</h2>
           <span class="group relative ml-3">
             <button role="details" aria-controls="info-popup"
-              class="border-b border-dotted border-blue-700 text-sm text-blue-700 focus:outline-none">What is
+              class="border-b border-dotted border-primary-700 text-sm text-primary-700 focus:outline-none">What is
               this?</button>
             <div role="tooltip" id="info-popup"
               class="absolute right-0 z-50 mx-auto hidden translate-x-40 transform rounded-md rounded-t-lg pt-1 group-hover:block">
@@ -530,7 +539,7 @@
               <h2 class="text-sm"><span class="mr-1 font-normal">Priority</span><span>Low</span></h2>
             </th>
           </tr>
-          <tr role="row" class="flex cursor-pointer border-b hover:bg-blue-100">
+          <tr role="row" class="flex cursor-pointer border-b hover:bg-primary-100">
             <td role="cell" headers="select" class="flex w-24 items-start py-3 pl-3 pr-1">
               <input class="mt-1" type="checkbox" />
               <div class="group relative ml-auto">
@@ -626,7 +635,7 @@
             <td class="flex-1 truncate py-3 px-1">UK Support</td>
             <td class="flex-1 truncate py-3 px-1">Nico Braun</td>
           </tr>
-          <tr role="row" class="flex cursor-pointer border-b hover:bg-blue-100">
+          <tr role="row" class="flex cursor-pointer border-b hover:bg-primary-100">
             <td role="cell" headers="select" class="flex w-24 items-start py-3 pl-3 pr-1">
               <input class="mt-1" type="checkbox" />
               <div class="group relative ml-auto">
@@ -723,7 +732,7 @@
             <td class="flex-1 truncate py-3 px-1">UK Support</td>
             <td class="flex-1 truncate py-3 px-1">Nico Braun</td>
           </tr>
-          <tr role="row" class="flex cursor-pointer border-b hover:bg-blue-100">
+          <tr role="row" class="flex cursor-pointer border-b hover:bg-primary-100">
             <td role="cell" headers="select" class="flex w-24 items-start py-3 pl-3 pr-1">
               <input class="mt-1" type="checkbox" />
               <div class="group relative ml-auto">
@@ -807,7 +816,7 @@
             <td class="flex-1 truncate py-3 px-1">-</td>
             <td class="flex-1 truncate py-3 px-1">-</td>
           </tr>
-          <tr role="row" class="flex cursor-pointer border-b hover:bg-blue-100">
+          <tr role="row" class="flex cursor-pointer border-b hover:bg-primary-100">
             <td role="cell" headers="select" class="flex w-24 items-start py-3 pl-3 pr-1">
               <input class="mt-1" type="checkbox" />
               <div class="group relative ml-auto">
@@ -912,7 +921,7 @@
               </h2>
             </th>
           </tr>
-          <tr role="row" class="flex cursor-pointer border-b hover:bg-blue-100">
+          <tr role="row" class="flex cursor-pointer border-b hover:bg-primary-100">
             <td role="cell" headers="select" class="flex w-24 items-start py-3 pl-3 pr-1">
               <input class="mt-1" type="checkbox" />
               <div class="group relative ml-auto">
@@ -1009,7 +1018,7 @@
             <td class="flex-1 truncate py-3 px-1">-</td>
             <td class="flex-1 truncate py-3 px-1">-</td>
           </tr>
-          <tr role="row" class="flex cursor-pointer border-b hover:bg-blue-100">
+          <tr role="row" class="flex cursor-pointer border-b hover:bg-primary-100">
             <td role="cell" headers="select" class="flex w-24 items-start py-3 pl-3 pr-1">
               <input class="mt-1" type="checkbox" />
               <div class="group relative ml-auto">

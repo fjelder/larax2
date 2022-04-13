@@ -22,7 +22,7 @@ module.exports = {
             colors: {
                 primary: colors.sky,
                 secondary: colors.slate,
-                extra: colors.teal,
+                extra: colors.orange,
             },
             fontSize: {
                 xxs: ["8px", "10px"],
