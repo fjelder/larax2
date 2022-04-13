@@ -2,87 +2,32 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
-* {
-    @apply dark:border-secondary-300/10 border-secondary-200 focus:border-secondary-200;
-}
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    @apply bg-secondary-50 border border-secondary-600/10 text-secondary-900 text-sm rounded-sm focus:ring-0 focus:outline-none focus:border-secondary-300 p-2.5 dark:bg-secondary-700  dark:placeholder-secondary-400 dark:text-white dark:focus:border-primary-500/50;
-}
-body > svg {
-    @apply fixed hidden w-24 text-blue-800 transform opacity-25 fill-current 2xl:block dark:text-secondary-300 -z-10;
-}
-body > svg.svg-primary {
-    @apply opacity-50 text-primary-500 dark:text-primary-800;
-}
-/*** header - 1 level ; logo - user menu ***/
-header {
-    @apply bg-secondary-50/50 dark:bg-secondary-900/40;
-}
-header .logo,
-.logo-quest {
+.logo {
     font-family: "Righteous", cursive;
     @apply inline-flex items-center antialiased font-semibold text-secondary-600 dark:text-secondary-500;
 }
-header .btn {
-    @apply rounded-full cursor-pointer text-secondary-500 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-secondary-200 dark:focus:ring-secondary-700 text-sm p-2.5;
-}
-/*** header - 2 level ; navigation ***/
-nav.main-menu {
-    @apply flex flex-col items-center justify-between py-5 mx-auto space-y-5 md:py-0 md:space-y-0 md:flex-row md:h-16 max-w-7xl;
-}
-nav.main-menu input[type="text2"] {
-    @apply w-56 pl-4 my-auto text-sm duration-200 border rounded-none shadow-md focus:border-primary-200 dark:focus:border-secondary-300/10 dark:bg-secondary-800 focus:w-full md:focus:w-96 transition-width focus:rounded-sm border-primary-500/20;
-}
-nav.main-menu input[type="text"] {
-    @apply block py-2.5 px-0 w-full text-sm text-secondary-900 bg-transparent border-0 focus:border-b-2 border-secondary-300 appearance-none dark:text-white dark:border-secondary-600 dark:focus:border-primary-700 focus:outline-none focus:ring-0 focus:border-primary-600 cursor-pointer;
-}
-nav.main-menu a {
-    @apply relative inline-flex items-center px-2 text-xs md:text-sm;
-}
-nav.main-menu a.active {
-    @apply border-l border-r shadow-none bg-primary-50/10 dark:bg-primary-800/10 border-secondary-300/60 dark:border-secondary-300/10;
-}
-nav.main-menu a.active svg {
-    @apply text-primary-300;
-}
-nav.main-menu a:hover svg {
-    @apply transition-all duration-100 scale-110 text-secondary-500/30 dark:text-secondary-200/30;
-}
-nav.main-menu a.active:first-child {
-    @apply border-l-0;
-}
-nav.main-menu a.active:after,
-nav.main-menu a:hover:after {
-    @apply absolute inset-x-0 top-0 block border-b-2 border-primary-500 -bottom-0.5;
-    content: "";
-}
-nav.main-menu a:hover:not(a.active) {
-    @apply text-secondary-400 dark:text-secondary-400;
-}
-nav.main-menu a > svg {
-    @apply w-6 h-6 mr-3;
+
+html,
+body {
+    @apply w-full h-full text-sm;
 }
 
-/*** wrapper - aside ; extra menu ***/
-main aside a {
-    @apply block md:m-4 text-secondary-500 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-secondary-200 dark:focus:ring-secondary-700 text-sm p-2.5;
-}
-main aside a > svg {
-    @apply block w-6 h-6;
-}
-main aside a.active {
-    @apply border-b-2 shadow-md bg-secondary-300/50 text-secondary-800 border-primary-500/30;
-}
-/*** wrapper - main ***/
-main input[type="text"].table-text-input {
-    @apply pl-10 w-80;
+/* can be configured in tailwind.config.js */
+.group:hover .group-hover\:block {
+    display: block;
 }
 
-.tabs ul li a {
-    @apply inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-secondary-600 hover:border-secondary-300 dark:hover:text-secondary-300;
+.focus\:cursor-text:focus {
+    cursor: text;
 }
-.tabs ul li a.active {
-    @apply inline-block p-4 border-b-2 rounded-t-lg text-primary-600 border-primary-600 dark:text-primary-500 dark:border-primary-500;
+
+.focus\:w-64:focus {
+    width: 16rem;
+}
+
+.input-with-value {
+    @apply border w-96 bg-secondary-50;
+}
+.input-without-value {
+    @apply w-3 border-0;
 }

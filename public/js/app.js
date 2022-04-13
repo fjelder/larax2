@@ -5024,7 +5024,7 @@ document.onkeydown = checkShortcuts;
 function checkShortcuts(event) {
   if (event.keyCode == 191) {
     // 191 == "/" key
-    var text_input = document.getElementById("site-search");
+    var text_input = document.getElementById("searchInput");
     text_input.focus();
     text_input.select();
     return false;
@@ -5032,9 +5032,11 @@ function checkShortcuts(event) {
 
   if (event.keyCode == 27) {
     // 27 == "esc" key
-    var text_input = document.getElementById("site-search");
+    var text_input = document.getElementById("searchInput");
     text_input.value = "";
     text_input.blur();
+    text_input.classList.remove("input-with-value");
+    text_input.classList.add("input-without-value");
     return false;
   }
 }

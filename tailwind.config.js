@@ -30,12 +30,15 @@ module.exports = {
             rotate: {
                 360: "360deg",
             },
+            minHeight: {
+                16: "4rem",
+            },
         },
     },
 
     plugins: [
-        require("@tailwindcss/forms"),
+        // require("@tailwindcss/forms"),
         require("@tailwindcss/typography"),
-        require("flowbite/plugin"),
+        // require("flowbite/plugin"),
     ],
 };

@@ -1,6 +1,33 @@
-<div class="flex flex-1 flex-col">
+<div x-data="{mobileMenuOpen: false}" class="flex flex-1 flex-col">
+  <!-- mobile section top nav -->
+  <div class="min-h-16 md:hidden flex justify-between items-center px-6 py-2">
+    <a href="/" class="logo">
+      <p class="ml-2 text-3xl">
+        <span class="text-4xl font-semibold">L</span>ara<span class="font-semibold text-extra-600/70">x2</span><span
+          class="font-semibold text-extra-600">.</span>
+      </p>
+    </a>
+
+    <div class="hidden cursor-pointer" x-cloak :class="{ 'hidden': mobileMenuOpen }" @click="mobileMenuOpen = true">
+      <x-heroicon-o-menu class="h-6 w-6 text-secondary-900" />
+    </div>
+
+    <div class="hidden cursor-pointer" x-cloak :class="{ 'hidden': ! mobileMenuOpen }" @click="mobileMenuOpen = false">
+      <x-heroicon-s-x class="h-6 w-6 text-extra-700" />
+    </div>
+  </div>
+
+  <div class="fixed bg-secondary-100 h-full z-50 mt-16 border-t p-2" x-cloak x-show="mobileMenuOpen"
+    x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
+    x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum pariatur optio dignissimos eaque consequatur sunt,
+    temporibus ab magnam fuga reiciendis provident ea facere omnis amet ratione recusandae. Neque, perspiciatis eos.
+  </div>
+
   <!-- section body top nav -->
-  <nav aria-label="top bar" class="flex h-16 flex-none justify-between bg-white items-center">
+  <nav aria-label="top bar"
+    class="hidden md:flex min-h-16 justify-between dark:bg-secondary-800 items-center flex-wrap">
     <!-- top bar left -->
     <ul aria-label="top bar left" aria-orientation="horizontal" class="flex">
       <!-- add button -->
@@ -130,25 +157,20 @@
       </li>
     </ul>
 
-    <a href="/" class="logo-quest">
+    <a href="/" class="logo">
       <p class="ml-2 text-3xl">
-        <span class="text-4xl font-semibold">L</span>ara<span
-          class="font-semibold text-extra-600/70 dark:text-primary-500/70">x2</span><span
-          class="font-semibold text-extra-600 dark:text-primary-500">.</span>
+        <span class="text-4xl font-semibold">L</span>ara<span class="font-semibold text-extra-600/70">x2</span><span
+          class="font-semibold text-extra-600">.</span>
       </p>
     </a>
     <!-- to bar right  -->
     <ul aria-label="top bar right" aria-orientation="horizontal" class="flex items-center px-8">
       <li class="relative">
-        <input title="Search Bar" aria-label="search bar" role="search"
-          class="w-4 cursor-pointer rounded-md py-2 pr-8 pl-4 placeholder-transparent transition-all duration-300 ease-in-out focus:w-64 focus:cursor-text focus:border-black focus:placeholder-gray-500"
-          type="text" placeholder="Search Chi Desk Support" />
+        <input id="searchInput" title=" Search Bar" aria-label="search bar" role="search"
+          class="w-0 bg-secondary-100 cursor-pointer rounded-md py-2 pr-8 pl-4 placeholder-transparent transition-all duration-500 ease-in-out focus:w-96 focus:cursor-text focus:placeholder-secondary-500 focus:outline-none  focus:ring-extra-200 focus:ring-1 focus:bg-secondary-50"
+          type="text" placeholder="Wyszukaj [/] [esc]" onfocusout="inputSearchCheckClass(this)" />
         <i class="pointer-events-none absolute top-0 right-0 flex h-full items-center pr-3">
-          <svg class="mx-auto h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24">
-            <path
-              d="M21.172 24l-7.387-7.387c-1.388.874-3.024 1.387-4.785 1.387-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9c0 1.761-.514 3.398-1.387 4.785l7.387 7.387-2.828 2.828zm-12.172-8c3.859 0 7-3.14 7-7s-3.141-7-7-7-7 3.14-7 7 3.141 7 7 7z" />
-          </svg>
+          <x-heroicon-o-search class="mx-auto h-6 w-6" />
         </i>
       </li>
 
@@ -166,15 +188,18 @@
       </li>
 
       <li class="ml-3 h-8 w-8">
-        <button title="v2 REPL" aria-label="repl"
+        <button id="theme-toggle" type="button"
           class="focus:shadow-outline h-full w-full rounded-md bg-gray-600 text-white focus:outline-none">
-          <i>
-            <svg class="mx-auto h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              viewBox="0 0 24 24">
-              <path
-                d="M22 6v16h-20v-16h20zm2-6h-24v24h24v-24zm-11 11v1.649l3.229 1.351-3.229 1.347v1.653l5-2.201v-1.599l-5-2.2zm-7 2.201v1.599l5 2.2v-1.653l-3.229-1.347 3.229-1.351v-1.649l-5 2.201z" />
-            </svg>
-          </i>
+          <svg id="theme-toggle-dark-icon" class="hidden mx-auto h-5 w-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              fill-rule="evenodd" clip-rule="evenodd"></path>
+          </svg>
         </button>
       </li>
 
@@ -201,19 +226,21 @@
   </nav>
 
   <!-- section body header -->
-  <header aria-label="page caption" class="flex h-16 flex-none items-center border-t bg-gray-100 px-4">
+  <header aria-label="page caption"
+    class="flex h-16 flex-none items-center border-t dark:border-secondary-300/10 bg-secondary-200/30 dark:bg-secondary-900 px-4">
     <h1 id="page-caption" class="text-lg font-semibold">{{__('Dashboard')}}</h1>
   </header>
 
   <!-- main content -->
-  <main class="flex min-h-0 flex-grow border-t">
+  <main class="flex min-h-0 flex-grow border-t dark:border-secondary-300/10 hidden">
     <!-- section update to tickets -->
-    <section class="flex min-h-0 w-full max-w-sm flex-none flex-col overflow-auto bg-gray-100 p-4">
+    <section
+      class="lg:flex min-h-0 w-full max-w-sm flex-none flex-col overflow-auto p-4 bg-secondary-50 dark:bg-secondary-900/50 hidden">
       <h1 class="mb-3 font-semibold">Lista kontraktów</h1>
       <ul>
         <li>
           <article tabindex="0"
-            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
+            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-extra-500 focus:border-extra-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
                 src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
@@ -230,7 +257,7 @@
         </li>
         <li>
           <article tabindex="0"
-            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
+            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-extra-500 focus:border-extra-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
                 src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
@@ -248,7 +275,7 @@
         </li>
         <li>
           <article tabindex="0"
-            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
+            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-extra-500 focus:border-extra-500 focus:outline-none">
             <span class="flex-none pt-1 pr-2">
               <img class="h-8 w-8 rounded-md"
                 src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
@@ -264,175 +291,15 @@
             </div>
           </article>
         </li>
-        <li>
-          <article tabindex="0"
-            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
-            <span class="flex-none pt-1 pr-2">
-              <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
-            </span>
-            <div class="flex-1">
-              <header class="mb-1">
-                Tarun T <span class="font-semibold">commented</span> on
-                <h1 class="inline">"RE: WPMS issue".</h1>
-              </header>
-              <p class="text-gray-600">Hi Mazhar, Please note this issue comes when user is not closing or logout
-                sy…</p>
-              <footer class="mt-2 text-sm text-gray-500">Friday 22:16</footer>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article tabindex="0"
-            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
-            <span class="flex-none pt-1 pr-2">
-              <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
-            </span>
-            <div class="flex-1">
-              <header class="mb-1">
-                Tarun T <span class="font-semibold">commented</span> on
-                <h1 class="inline">"RE: WPMS issue".</h1>
-              </header>
-              <p class="text-gray-600">Hi Mazhar, Please note this issue comes when user is not closing or logout
-                sy…</p>
-              <footer class="mt-2 text-sm text-gray-500">Friday 22:16</footer>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article tabindex="0"
-            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
-            <span class="flex-none pt-1 pr-2">
-              <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
-            </span>
-            <div class="flex-1">
-              <header class="mb-1">
-                Tarun T <span class="font-semibold">commented</span> on
-                <h1 class="inline">"RE: WPMS issue".</h1>
-              </header>
-              <p class="text-gray-600">Hi Mazhar, Please note this issue comes when user is not closing or logout
-                sy…</p>
-              <footer class="mt-2 text-sm text-gray-500">Friday 22:16</footer>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article tabindex="0"
-            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
-            <span class="flex-none pt-1 pr-2">
-              <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
-            </span>
-            <div class="flex-1">
-              <header class="mb-1">
-                Tarun T <span class="font-semibold">commented</span> on
-                <h1 class="inline">"RE: WPMS issue".</h1>
-              </header>
-              <p class="text-gray-600">Hi Mazhar, Please note this issue comes when user is not closing or logout
-                sy…</p>
-              <footer class="mt-2 text-sm text-gray-500">Friday 22:16</footer>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article tabindex="0"
-            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
-            <span class="flex-none pt-1 pr-2">
-              <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
-            </span>
-            <div class="flex-1">
-              <header class="mb-1">
-                Tarun T <span class="font-semibold">commented</span> on
-                <h1 class="inline">"RE: WPMS issue".</h1>
-              </header>
-              <p class="text-gray-600">Hi Mazhar, Please note this issue comes when user is not closing or logout
-                sy…</p>
-              <footer class="mt-2 text-sm text-gray-500">Friday 22:16</footer>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article tabindex="0"
-            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
-            <span class="flex-none pt-1 pr-2">
-              <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
-            </span>
-            <div class="flex-1">
-              <header class="mb-1">
-                Tarun T <span class="font-semibold">commented</span> on
-                <h1 class="inline">"RE: WPMS issue".</h1>
-              </header>
-              <p class="text-gray-600">Hi Mazhar, Please note this issue comes when user is not closing or logout
-                sy…</p>
-              <footer class="mt-2 text-sm text-gray-500">Friday 22:16</footer>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article tabindex="0"
-            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
-            <span class="flex-none pt-1 pr-2">
-              <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
-            </span>
-            <div class="flex-1">
-              <header class="mb-1">
-                Tarun T <span class="font-semibold">commented</span> on
-                <h1 class="inline">"RE: WPMS issue".</h1>
-              </header>
-              <p class="text-gray-600">Hi Mazhar, Please note this issue comes when user is not closing or logout
-                sy…</p>
-              <footer class="mt-2 text-sm text-gray-500">Friday 22:16</footer>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article tabindex="0"
-            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
-            <span class="flex-none pt-1 pr-2">
-              <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
-            </span>
-            <div class="flex-1">
-              <header class="mb-1">
-                Tarun T <span class="font-semibold">commented</span> on
-                <h1 class="inline">"RE: WPMS issue".</h1>
-              </header>
-              <p class="text-gray-600">Hi Mazhar, Please note this issue comes when user is not closing or logout
-                sy…</p>
-              <footer class="mt-2 text-sm text-gray-500">Friday 22:16</footer>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article tabindex="0"
-            class="mb-2 flex cursor-pointer rounded-md border bg-white p-3 text-gray-700 hover:border-green-500 focus:border-green-500 focus:outline-none">
-            <span class="flex-none pt-1 pr-2">
-              <img class="h-8 w-8 rounded-md"
-                src="https://raw.githubusercontent.com/primarybrown/tailwind-zendesk-clone/master/public/assets/avatar.png" />
-            </span>
-            <div class="flex-1">
-              <header class="mb-1">
-                Tarun T <span class="font-semibold">commented</span> on
-                <h1 class="inline">"RE: WPMS issue".</h1>
-              </header>
-              <p class="text-gray-600">Hi Mazhar, Please note this issue comes when user is not closing or logout
-                sy…</p>
-              <footer class="mt-2 text-sm text-gray-500">Friday 22:16</footer>
-            </div>
-          </article>
-        </li>
+
       </ul>
     </section>
 
     <!-- section content -->
-    <section aria-label="main content" class="flex min-h-0 flex-auto flex-col border-l">
+    <section aria-label="main content"
+      class="flex min-h-0 flex-auto flex-col border-l dark:border-secondary-300/10 overflow-auto">
       <!-- content navigation -->
-      <nav class="flex bg-gray-100 p-4">
+      <nav class="flex p-4">
         <!-- open tickets nav -->
         <section aria-labelledby="open-tickets-tabs-label" class="mr-4 focus:outline-none">
           <label id="open-tickets-tabs-label" class="mb-1 block text-sm font-semibold">Open Tickets
@@ -496,7 +363,7 @@
               this?</button>
             <div role="tooltip" id="info-popup"
               class="absolute right-0 z-50 mx-auto hidden translate-x-40 transform rounded-md rounded-t-lg pt-1 group-hover:block">
-              <div class="w-full w-screen max-w-xs rounded-md rounded-t-lg border bg-white shadow-lg">
+              <div class="w-full max-w-xs rounded-md rounded-t-lg border bg-white shadow-lg">
                 <header class="rounded-t-lg bg-gray-300 px-4 py-2 font-semibold">People are waiting for replies!
                 </header>
                 <div class="border-t p-4">
@@ -518,7 +385,7 @@
                 remove table and thead but keep tbody and change tbody to section, in order
                 to have scrollable overflow section -->
       <table aria-describedby="info-popup" aria-label="open tickets"
-        class="flex h-full min-h-0 w-full flex-col border-t">
+        class="flex h-full min-h-0 flex-col border-t w-full hidden">
         <thead class="flex w-full flex-col px-4">
           <tr class="flex border-b">
             <th class="w-24 py-3 pl-3 pr-1 text-left font-semibold">
@@ -532,7 +399,7 @@
             <th class="flex-1 truncate py-3 px-1 text-left font-semibold">Assignee</th>
           </tr>
         </thead>
-        <tbody class="flex min-h-0 w-full flex-1 flex-col overflow-hidden px-4">
+        <tbody class="flex min-h-0 w-full flex-1 flex-col px-4">
           <!-- low -->
           <tr class="flex border-b">
             <th class="flex-1 bg-gray-100 px-3 py-2 text-left" colspan="7">
@@ -1126,7 +993,7 @@
       </table>
 
       <!-- content footer, currently hidden -->
-      <footer aria-label="content footer" class="flex hidden border-t bg-white p-3">footer</footer>
+      <footer aria-label="content footer" class="flex border-t bg-white p-3">footer</footer>
     </section>
   </main>
 </div>
