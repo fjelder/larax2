@@ -24,6 +24,7 @@ return new class extends Migration
             $table->boolean('is_active')->nullable();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->tinyInteger('currentContractId')->default(1);
             $table->timestamps();
         });
     }

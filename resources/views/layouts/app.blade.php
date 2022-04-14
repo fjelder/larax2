@@ -50,7 +50,7 @@
 <body
   class="font-sans antialiased font-normal bg-secondary-100 text-secondary-600 dark:bg-secondary-800 dark:text-secondary-100">
   <x-jet-banner />
-  @livewire('navigation-menu')
+
   <div class="flex h-full w-full overflow-hidden">
     <!-- section body side nav -->
     <nav aria-label="side bar" aria-orientation="vertical"
@@ -121,8 +121,25 @@
       </div>
     </nav>
 
-    <!-- content -->
-    <x-layout.content />
+    <div class="flex flex-1 flex-col">
+      <!-- top bar section -->
+      @livewire('navigation-menu')
+      <!-- section body header -->
+      @if (isset($header))
+      <header aria-label="page caption"
+        class="flex h-16 flex-none items-center border-t dark:border-secondary-300/10 bg-secondary-200/30 dark:bg-secondary-900 px-4">
+        <h1 id="page-caption" class="text-lg font-semibold">{{ $header }}</h1>
+      </header>
+      @endif
+      <!-- content -->
+
+
+      <main class="flex min-h-0 flex-grow border-t dark:border-secondary-300/10">
+        <x-layout.content />
+        {{$slot}}
+      </main>
+
+    </div>
   </div>
 
   <div class="flex flex-col min-h-screen mx-auto bg-white border-l border-r max-w-7xl dark:bg-secondary-900/50 hidden">

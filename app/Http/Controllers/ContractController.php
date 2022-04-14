@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ContractController extends Controller
 {
+    public function last(Contract $contract)
+    {
+       $last = Contract::orderByDesc("id")->first();
+       return redirect(route('contract.show', $last->id));
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,7 @@ class ContractController extends Controller
      */
     public function index()
     {
-        $data = Contract::Paginate(10);
+        $data = Contract::all()->sortByDesc("id");
         return view('contract.index', [
             'contracts' => $data
         ]);

@@ -15,9 +15,7 @@ use App\Http\Controllers\ContractController;
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
  
-    Route::get('/', function () {
-        return view('app-zen');
-    })->name('home');
+    Route::get('/', [ContractController::class, 'last'])->name('home');
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');

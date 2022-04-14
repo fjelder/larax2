@@ -29,6 +29,36 @@
             "stopTime": "2022-10-10",
             "contractStageId": "1",
             "contractStudyId": "3"
+        },
+        {
+            "shortName": "Zgierz - Łódź Kaliska 2",
+            "taskName": "„Wykonanie prac projektowych i robót budowlanych na liniach kolejowych nr 15, 16 na odcinku Łódź Kaliska - Zgierz od km 56.773 do km 66.664 linii kolejowej nr 15 i od km 12.980 do km 14.204 linii kolejowej nr 16 w ramach projektu pn.: „Prace na liniach kolejowych nr 15, 16 na odcinku Łódź Kaliska – Zgierz – Kutno””",
+            "ContractNumber": "90/107/0380/18/Z/I",
+            "prefix": "ZgŁK",
+            "startTime": "2019-01-01",
+            "stopTime": "2023-12-16",
+            "contractStageId": "1",
+            "contractStudyId": "1"
+        },
+        {
+            "shortName": "Łęczyca - Ozorków 2",
+            "taskName": "Wykonanie prac projektowych i robót budowlanych na linii kolejowej nr 16 na odcinku Ozorków - Łęczyca od km 35,884 do km 47,397 linii kolejowej nr 16 w ramach projektu pn.: Prace na liniach kolejowych nr 15, 16 na odcinku Łódź Kaliska - Zgierz - Kutno",
+            "ContractNumber": "90/107/0360/18/Z/I",
+            "prefix": "OzŁe",
+            "startTime": "2019-01-01",
+            "stopTime": "2020-09-25",
+            "contractStageId": "1",
+            "contractStudyId": "2"
+        },
+        {
+            "shortName": "Ozorków - Łęczyca 2",
+            "taskName": "„Wykonanie prac projektowych i robót budowlanych w ramach projektu pn.: Rewitalizacja linii kolejowej nr 16 Łódź Widzew - Kutno na odcinku Zgierz - Ozorków",
+            "ContractNumber": "90/107/0075/19/Z/I",
+            "prefix": "ZgOz",
+            "startTime": "2019-01-01",
+            "stopTime": "2022-10-10",
+            "contractStageId": "1",
+            "contractStudyId": "3"
         }
     ]
 }
