@@ -54,11 +54,9 @@
   <div class="flex h-full w-full overflow-hidden">
     <!-- section body side nav -->
     <nav aria-label="side bar" aria-orientation="vertical"
-      class="md:flex flex-none flex-col items-center border-r dark:border-secondary-300/10 text-center bg-secondary-900 text-secondary-400 hidden">
-      <div class="flex h-16 w-full items-center ">
-        <img class="mx-auto h-6 w-6 hidden"
-          src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/leaves.png" />
-        <x-logo class="mx-auto h-12 w-12" />
+      class="md:flex flex-none flex-col items-center justify-center border-r dark:border-secondary-300/10 text-center bg-secondary-900 text-secondary-400 hidden">
+      <div class="flex h-16 w-full items-center hidden">
+        <x-logo class="mx-auto h-16 w-16" />
       </div>
 
       <ul class="">
@@ -115,7 +113,7 @@
         </li>
       </ul>
 
-      <div class="mt-auto flex h-16 w-full items-center">
+      <div class="mt-auto flex h-16 w-full items-center hidden">
         <img style="filter: invert(85%);" class="mx-auto h-8 w-10"
           src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/chi.png" />
       </div>
