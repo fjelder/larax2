@@ -2,17 +2,17 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+html,
+body {
+    @apply w-full h-full text-sm;
+}
+
 .font-r {
     font-family: "Righteous", cursive;
 }
 .logo {
     font-family: "Righteous", cursive;
     @apply inline-flex items-center antialiased font-semibold text-secondary-600 dark:text-secondary-500;
-}
-
-html,
-body {
-    @apply w-full h-full text-sm;
 }
 
 /* can be configured in tailwind.config.js */
@@ -28,20 +28,23 @@ body {
     width: 16rem;
 }
 
-.input-with-value {
-    @apply border w-96 bg-secondary-50;
+/* search input */
+.searchInput {
+    border-width: 0px;
 }
-.input-without-value {
+.searchInput.input-with-value {
+    @apply border border-secondary-200 w-96 bg-secondary-50;
+}
+.searchInput.input-without-value {
     @apply w-3 border-0;
 }
-
 /* tabs */
 .tab a {
-    @apply inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300;
+    @apply inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-secondary-600 hover:border-secondary-300 dark:hover:text-secondary-300;
 }
 .tab a.active {
-    @apply text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500;
+    @apply text-primary-600 border-primary-600 dark:text-primary-500 dark:border-primary-500;
 }
 .tab a.disabled {
-    @apply text-gray-400 rounded-t-lg cursor-not-allowed dark:text-gray-500;
+    @apply rounded-t-lg cursor-not-allowed text-secondary-400 dark:text-secondary-500;
 }

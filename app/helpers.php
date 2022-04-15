@@ -20,3 +20,18 @@ function getStudyContract($id)
 	else
 		return false;
 }
+function getStageContract($id)
+{
+	$listOfStage = getFileJson('contract-stage');
+	if(isset($listOfStage))
+		return $listOfStage[$id];
+	else
+		return false;
+}
+function getContractPrefix($contract)
+{
+	if($contract instanceof App\Models\Contract)
+		return 'ERG/'.$contract->id.'/'.$contract->created_at->format('Y').'/'.$contract->prefix;
+	else
+		return false;
+}

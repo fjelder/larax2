@@ -145,7 +145,7 @@
     <ul aria-label="top bar right" aria-orientation="horizontal" class="flex items-center px-8">
       <li class="relative">
         <input id="searchInput" title=" Search Bar" aria-label="search bar" role="search"
-          class="w-0 bg-secondary-100 cursor-pointer rounded-md py-2 pr-8 pl-4 placeholder-transparent transition-all duration-500 ease-in-out focus:w-96 focus:cursor-text focus:placeholder-secondary-500 focus:outline-none  focus:ring-extra-200 focus:ring-1 focus:bg-secondary-50"
+          class="searchInput w-0 bg-secondary-100 cursor-pointer rounded-md py-2 pr-8 pl-4 placeholder-transparent transition-all duration-500 ease-in-out focus:w-96 focus:cursor-text focus:placeholder-secondary-500 focus:outline-none  focus:ring-extra-200 focus:ring-1 focus:bg-secondary-50 focus:border-0"
           type="text" placeholder="Wyszukaj [/] [esc]" onfocusout="inputSearchCheckClass(this)" />
         <i class="pointer-events-none absolute top-0 right-0 flex h-full items-center pr-3">
           <x-heroicon-o-search class="mx-auto h-6 w-6" />

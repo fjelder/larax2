@@ -22,7 +22,7 @@ module.exports = {
             colors: {
                 primary: colors.sky,
                 secondary: colors.slate,
-                extra: colors.orange,
+                extra: colors.red,
             },
             fontSize: {
                 xxs: ["8px", "10px"],
@@ -37,8 +37,8 @@ module.exports = {
     },
 
     plugins: [
-        // require("@tailwindcss/forms"),
+        require("@tailwindcss/forms"),
         require("@tailwindcss/typography"),
-        // require("flowbite/plugin"),
+        require("flowbite/plugin"),
     ],
 };

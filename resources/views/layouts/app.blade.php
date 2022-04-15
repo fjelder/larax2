@@ -55,9 +55,6 @@
     <!-- section body side nav -->
     <nav aria-label="side bar" aria-orientation="vertical"
       class="md:flex flex-none flex-col items-center justify-center border-r dark:border-secondary-300/10 text-center bg-secondary-900 text-secondary-400 hidden">
-      <div class="flex h-16 w-full items-center hidden">
-        <x-logo class="mx-auto h-16 w-16" />
-      </div>
 
       <ul class="">
         <li>
@@ -113,13 +110,9 @@
         </li>
       </ul>
 
-      <div class="mt-auto flex h-16 w-full items-center hidden">
-        <img style="filter: invert(85%);" class="mx-auto h-8 w-10"
-          src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/chi.png" />
-      </div>
     </nav>
 
-    <div class="flex flex-1 flex-col">
+    <div class="flex flex-1 flex-col overflow-auto">
       <!-- top bar section -->
       @livewire('navigation-menu')
       <!-- section body header -->
@@ -132,78 +125,12 @@
       <!-- content -->
 
 
-      <main class="flex min-h-0 flex-grow border-t dark:border-secondary-300/10">
+      <main class="flex min-h-0 flex-grow border-t dark:border-secondary-300/10 ">
         <x-layout.content />
         {{$slot}}
       </main>
 
     </div>
-  </div>
-
-  <div class="flex flex-col min-h-screen mx-auto bg-white border-l border-r max-w-7xl dark:bg-secondary-900/50 hidden">
-    <!-- top -->
-
-    <div class="bg-secondary-50/50 dark:bg-secondary-900/40 border-primary-500/20">
-      @livewire('navigation-menu')
-      <nav class="pl-0.5a md:pr-4 md:pl-0 border-b-2 main-menu">
-        <div class="flex flex-wrap w-full h-full font-medium gap-5x text-secondary-500">
-          <a href="{{ route('dashboard') }}" class="{{request()->routeIs('dashboard') ? 'active' : ''}}">
-            <x-heroicon-o-home />
-            Strona główna
-          </a>
-
-          <a href="{{ route('contract.index') }}" class="{{request()->routeIs('contract.index') ? 'active' : ''}}">
-            <x-heroicon-o-collection />
-            Kontrakty
-          </a>
-
-          <a href="{{route('profile.show')}}" class="{{request()->routeIs('profile.show') ? 'active' : ''}}">
-            <x-heroicon-o-user />
-            Profil
-          </a>
-
-        </div>
-
-        <div class="relative z-0 w-96">
-          <input type="text" id="site-search" name="search" class="peer" placeholder=" " />
-          <label for="search"
-            class="absolute text-sm text-secondary-500 dark:text-secondary-400 duration-300 transform -translate-y-4 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">
-            <x-heroicon-o-search class="w-5 h-5 inline-block" />
-            Wyszukaj
-          </label>
-          <label for="search"
-            class="absolute text-sm text-secondary-500 dark:text-secondary-400 duration-300 transform -translate-y-4 scale-75 top-2 right-0 -z-10 origin-[0] peer-focus:hidden peer-focus:text-primary-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 ">[/]</label>
-          <label for="search"
-            class="absolute text-sm text-secondary-500 dark:text-secondary-400 duration-300 transform -translate-y-4 scale-75 top-2 hidden -z-10 origin-[0] peer-focus:inline peer-focus:right-0 peer-focus:text-primary-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 ">[esc]</label>
-
-        </div>
-
-
-      </nav>
-    </div>
-
-    <main class="flex flex-col flex-1 px-4 pb-12">
-
-      <div
-        class="flex flex-col items-start gap-4 my-6 md:flex-row md:items-center {{ isset($header) ? 'md:justify-between' : 'md:justify-end'}}">
-        <!-- Page Heading -->
-        @if (isset($header))
-        <h2 class="text-xl font-semibold leading-tight capitalize text-secondary-600 dark:text-secondary-500">
-          <span class="text-2xl text-extra-500 hidden">:..</span>
-          {{ $header }}
-        </h2>
-        @endif
-        <x-breadcrumbs />
-      </div>
-
-      <div class="{{isset($aside) ? 'flex flex-col flex-1 md:flex-row' : ''}}">
-        @isset($aside)
-        {{$aside}}
-        @endif
-        {{$slot}}
-      </div>
-
-    </main>
   </div>
 
 
