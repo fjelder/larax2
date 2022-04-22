@@ -125,7 +125,7 @@
       <!-- content -->
 
 
-      <main class="flex min-h-0 flex-grow border-t dark:border-secondary-300/10 ">
+      <main class="flex min-h-0 flex-grow border-t dark:border-secondary-300/10">
         <x-layout.content />
         {{$slot}}
       </main>
