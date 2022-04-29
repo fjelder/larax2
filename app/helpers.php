@@ -12,6 +12,10 @@ function getFileJson($file, $ext = 'json')
 	}
 	return false;
 }
+// studyContract
+function getAllStudyContract(){
+	return getFileJson('contract-study');
+}
 function getStudyContract($id)
 {
 	$listOfStudy = getFileJson('contract-study');
@@ -19,6 +23,10 @@ function getStudyContract($id)
 		return $listOfStudy[$id];
 	else
 		return false;
+}
+// stageContract
+function getAllStageContract(){
+	return getFileJson('contract-stage');
 }
 function getStageContract($id)
 {

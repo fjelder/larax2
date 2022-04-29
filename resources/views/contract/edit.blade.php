@@ -11,61 +11,72 @@
 
     <div class="px-4">
       <form>
-        <div class="relative z-0 mb-6 w-full group">
-          <input type="text" name=""
-            class="block py-2.5 px-0 w-full text-sm text-secondary-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-secondary-600 dark:focus:border-extra-500 focus:outline-none focus:ring-0 focus:border-primary-600 peer"
-            value="{{$contract->shortName}}" />
-          <label for="floating_email"
-            class="absolute text-sm text-secondary-500 dark:text-secondary-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary-600 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Skórcona
-            nazwa</label>
-        </div>
-        <div class="relative z-0 mb-6 w-full group">
-          <input type="text" name="floating_password" id="floating_password"
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-primary-600 peer"
-            placeholder=" " required />
-          <label for="floating_password"
-            class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary-600 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-        </div>
-        <div class="relative z-0 mb-6 w-full group">
-          <input type="text" name="repeat_password" id="floating_repeat_password"
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-primary-600 peer"
-            placeholder=" " required />
-          <label for="floating_repeat_password"
-            class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary-600 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
-            password</label>
-        </div>
-        <div class="grid xl:grid-cols-2 xl:gap-6">
-          <div class="relative z-0 mb-6 w-full group">
-            <input type="text" name="floating_first_name" id="floating_first_name"
-              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-primary-600 peer"
-              placeholder=" " required />
-            <label for="floating_first_name"
-              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary-600 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
-              name</label>
+        <div class="grid grid-cols-12 gap-5 md:gap-2">
+          <div class="col-span-2 2xl:col-span-1">
+            <x-ui.input-text label="ID" :value="$contract->id" disabled class="cursor-not-allowed" />
           </div>
-          <div class="relative z-0 mb-6 w-full group">
-            <input type="text" name="floating_last_name" id="floating_last_name"
-              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-primary-600 peer"
-              placeholder=" " required />
-            <label for="floating_last_name"
-              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary-600 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
-              name</label>
+          <div class="col-span-10 2xl:col-span-3">
+            <x-ui.input-text label="Prefix" :value="getContractPrefix($contract)" disabled class="cursor-not-allowed" />
           </div>
-        </div>
-        <div class="grid xl:grid-cols-2 xl:gap-6">
-          <div class="relative z-0 mb-6 w-full group">
-            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone"
-              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-primary-600 peer"
-              placeholder=" " required />
-            <label for="floating_phone"
-              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary-600 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone
-              number (123-456-7890)</label>
+          <div class="col-span-12 2xl:col-span-8">
+            <x-ui.input-text label="Skórcona nazwa" :value="$contract->shortName" />
+          </div>
+
+          <div class="col-span-12">
+            <div class="relative mt-5 bg-secondary-100">
+              <textarea name="" id="" cols="" rows="5"
+                class="peer z-20 w-full border p-2 text-base text-gray-500 outline-none focus:border-b-2 focus:border-b-primary-500 focus:ring-0 focus:outline-none border-secondary-300 focus:border-secondary-300 bg-transparent indent-0"
+                placeholder="">{{$contract->taskName}}</textarea>
+              <label for=""
+                class="absolute left-2 origin-[0] -translate-y-3 transform bg-inherit px-3 text-sm font-semibold text-gray-400 transition-all peer-placeholder-shown:z-10 peer-placeholder-shown:translate-y-2 peer-focus:z-10 peer-focus:-translate-y-3"
+                onclick="this.previousElementSibling.focus()">Nazwa zadania</label>
+            </div>
+          </div>
+
+          <div class="col-span-12 2xl:col-span-2">
+            <x-ui.input-text label="Numer umowy" :value="$contract->contractNumber" />
+          </div>
+          <div class="col-span-12 2xl:col-span-2 md:col-span-6">
+            <x-ui.input-text label="Data rozpoczęcia" :value="$contract->startTime" />
+          </div>
+          <div class="col-span-12 2xl:col-span-2 md:col-span-6">
+            <x-ui.input-text label="Data zakończenia" :value="$contract->stopTime" />
+          </div>
+          <div class="col-span-12 2xl:col-span-3 md:col-span-6">
+            <div class="relative mt-5 bg-secondary-100">
+              <select name="contractStage" id=""
+                class="peer z-20 w-full border p-2 text-base text-gray-500 outline-none focus:border-b-2 focus:border-b-primary-500 focus:ring-0 focus:outline-none border-secondary-300 focus:border-secondary-300 bg-transparent indent-0">
+                @foreach(getAllStageContract() as $key => $stage)
+                @if($key)
+                <option value="{{$key}}" {{ ($key  == $contract->contractStageId) ?  'selected' : '' }}>{{$stage}}
+                </option>
+                @endif
+                @endforeach
+              </select>
+              <label for=""
+                class="absolute left-2 origin-[0] -translate-y-3 transform bg-inherit px-3 text-sm font-semibold text-gray-400 transition-all peer-placeholder-shown:z-10 peer-placeholder-shown:translate-y-2 peer-focus:z-10 peer-focus:-translate-y-3"
+                onclick="this.previousElementSibling.focus()">Status kontraktu</label>
+            </div>
+          </div>
+          <div class="col-span-12 2xl:col-span-3 md:col-span-6">
+            <div class="relative mt-5 bg-secondary-100">
+              <select name="contractStudy" id=""
+                class="peer z-20 w-full border p-2 text-base text-gray-500 outline-none focus:border-b-2 focus:border-b-primary-500 focus:ring-0 focus:outline-none border-secondary-300 focus:border-secondary-300 bg-transparent indent-0">
+                @foreach(getAllStudyContract() as $key => $study)
+                <option value="{{$key}}" {{ ($key  == $contract->contractStudyId) ?  'selected' : '' }}>{{$study}}
+                </option>
+                @endforeach
+              </select>
+              <label for=""
+                class="absolute left-2 origin-[0] -translate-y-3 transform bg-inherit px-3 text-sm font-semibold text-gray-400 transition-all peer-placeholder-shown:z-10 peer-placeholder-shown:translate-y-2 peer-focus:z-10 peer-focus:-translate-y-3"
+                onclick="this.previousElementSibling.focus()">Stadium kontraktu</label>
+            </div>
           </div>
 
         </div>
 
         <button type="submit"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-10">Submit</button>
       </form>
     </div>
 
